@@ -1,8 +1,7 @@
 <?php
-$a = 1;
-$b = 2;
 
-$total = $a - $b;
-echo "La resta es $total";
-
+function resta($a,$b){
+	return $a - $b;
+}
+echo "La resta es: ".resta(3,5);
 ?>
