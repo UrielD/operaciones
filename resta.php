@@ -1,23 +1,35 @@
 <?php
 class Operaciones{
  public $a,$b,$resultado;
-
- public function asignaValores($a, $b){
-   $this->a = $a;
-   $this->b = $b;
-
- }
-
- private function restar($a, $b){
+ 	function __construct($a, $b){
+   		$this->a = $a;
+   		$this->b = $b;
+ 	}
+ 	public function restar($a, $b){
       $this->resultado = $this->a - $this->b;
     }    
 
-    public function imprimir($resultado){
-     $this->restar();
-       return $this->resultado;
+    public	function sumar($a, $b){
+		$this->resultado = $this->a + $this->b;
+    }
+
+    public	function multiplicar($a, $b){
+		$this->resultado = $this->a * $this->b;
+    }
+
+    public function imprimir(){
+    	return $this->resultado;
     }
 }
-$resta = new Operaciones;
-$resta->asignaValores(4,1);
-echo "La resta es: ".$resta->imprimir();
-?> 
+$suma = new Operaciones(5,5);
+$suma->sumar();
+echo "Suma: ".$suma->imprimir();
+echo "<br>";
+$resta = new Operaciones(5,1);
+$resta->restar();
+echo "Resta: ".$resta->imprimir();
+echo "<br>";
+$multiplica = new Operaciones(5,5);
+$multiplica->multiplicar();
+echo "Multiplica: ".$multiplica->imprimir();
+?>
