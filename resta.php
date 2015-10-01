@@ -1,7 +1,23 @@
 <?php
+class Operaciones{
+ public $a,$b,$resultado;
 
-function resta($a,$b){
-	return $a - $b;
+ public function asignaValores($a, $b){
+   $this->a = $a;
+   $this->b = $b;
+
+ }
+
+ private function restar($a, $b){
+      $this->resultado = $this->a - $this->b;
+    }    
+
+    public function imprimir($resultado){
+     $this->restar();
+       return $this->resultado;
+    }
 }
-echo "La resta es: ".resta(3,5);
-?>
+$resta = new Operaciones;
+$resta->asignaValores(4,1);
+echo "La resta es: ".$resta->imprimir();
+?> 
